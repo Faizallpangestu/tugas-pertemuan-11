@@ -1,0 +1,103 @@
+/* Gaya dasar */
+* {
+    font-family: "Trebuchet MS", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-transform: uppercase;
+    color: green;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    border: 1px solid #ddeeee;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 90%; /* Mengurangi lebar untuk ruang pada layar kecil */
+    margin: 10px auto;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table thead th {
+    background-color: #ddefef;
+    border: 1px solid #ddeeee;
+    color: #336b6b;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px 1px 1px #fff;
+    font-size: 14px;
+}
+
+table tbody td {
+    border: 1px solid #ddeeee;
+    color: #333;
+    padding: 15px;
+    font-size: 14px;
+    text-align: center;
+    word-wrap: break-word; /* Supaya teks panjang terpotong */
+}
+
+a {
+    background-color: green;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+}
+
+a:hover {
+    background-color: #005700;
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+    table {
+        width: 100%; /* Tabel akan memakan seluruh lebar layar */
+    }
+
+    table thead {
+        display: none; /* Sembunyikan header tabel di layar kecil */
+    }
+
+    table tbody tr {
+        display:flex; /* Tampilkan baris secara block */
+        margin-bottom: 15px;
+    }
+
+    table tbody td {
+        display: flex; /* Setiap kolom menjadi block */
+        text-align: right; /* Atur teks ke kanan */
+        font-size: 13px;
+        padding: 10px 5px;
+        position: relative;
+        border: none; /* Hilangkan border kolom */
+        border-bottom: 1px solid #ddeeee;
+    }
+
+    table tbody td::before {
+        content: attr(data-label); /* Ambil label kolom */
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    table tbody td:last-child {
+        border-bottom: none; /* Hilangkan border terakhir */
+    }
+}
